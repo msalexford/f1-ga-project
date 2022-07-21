@@ -23,6 +23,7 @@ const StandingList = (props) => {
                     <h3>{standing.Driver.familyName}</h3>
                     <p>{standing.Constructors[0].name}</p>
                     <p>{standing.points}</p>
+                    <br />
                 </div>
             ))
             }

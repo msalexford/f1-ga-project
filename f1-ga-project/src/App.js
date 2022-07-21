@@ -26,7 +26,9 @@ function App() {
     // we can put an async function inside of useEffect
     const getData = async () => {
       // make axios call
-      const response = await axios.get(`${BASE_URL}/2022/driverStandings.json`)
+      const response = await axios.get(
+        `${BASE_URL}/${selected}/driverStandings.json`
+      )
       // create setStandings to store standings in state
       setStandings(
         response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
