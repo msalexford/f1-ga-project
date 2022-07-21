@@ -1,15 +1,20 @@
-import logo from './logo.svg'
-import './App.css'
+// import styles
+import './styles.css'
 // import hooks useState and useState from react
 import { useState, useEffect } from 'react'
 // import StandingList component
 import StandingList from './components/StandingList'
+// import dropdown component
+import Dropdown from './components/Dropdown'
 // import axios to fetch api
 import axios from 'axios'
 // import global variables
 import { BASE_URL } from './globals'
 
 function App() {
+  // for drop down menu
+  const [selected, setSelected] = useState('Choose a year to view standings.')
+
   const [standings, setStandings] = useState([])
   const [selectedStandings, setSelectedStandings] = useState(null)
 
@@ -40,11 +45,17 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div className="App">
+      <br />
+      <h1>Formula 1 standings through the years.</h1>
+      {/* bring in drop down menu component */}
+      <Dropdown selected={selected} setSelected={setSelected} />
+      <br />
+      <br />
       {/* bring in our StandingList component */}
       {/* pass our state as a prop */}
       {/* standings, the property key (will be constructed in our props object when we pass it to the other component) = standings, the piece of state (what we want the value of that key to be)*/}
-      <StandingList standings={standings} />
+      {/* <StandingList standings={standings} /> */}
     </div>
   )
 }
