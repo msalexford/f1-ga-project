@@ -2,6 +2,8 @@ import logo from './logo.svg'
 import './App.css'
 // import hooks useState and useState from react
 import { useState, useEffect } from 'react'
+// import StandingList component
+import StandingList from './components/StandingList'
 // import axios to fetch api
 import axios from 'axios'
 // import global variables
@@ -23,6 +25,9 @@ function App() {
       setStandings(
         response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
       )
+      console.log(
+        response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
+      )
 
       // data we want is:
       // (1) driver first name --> [number] > Driver > givenName
@@ -35,21 +40,11 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* bring in our StandingList component */}
+      {/* pass our state as a prop */}
+      {/* standings, the property key (will be constructed in our props object when we pass it to the other component) = standings, the piece of state (what we want the value of that key to be)*/}
+      <StandingList standings={standings} />
     </div>
   )
 }
