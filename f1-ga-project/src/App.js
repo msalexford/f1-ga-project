@@ -15,6 +15,7 @@ function App() {
   // for drop down menu
   const [selected, setSelected] = useState('Choose a year to view standings.')
 
+  // for pulling in standings data
   const [standings, setStandings] = useState([])
   const [selectedStandings, setSelectedStandings] = useState(null)
 
@@ -30,9 +31,9 @@ function App() {
       setStandings(
         response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
       )
-      console.log(
-        response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
-      )
+      // console.log(
+      //   response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
+      // )
 
       // data we want is:
       // (1) driver first name --> [number] > Driver > givenName
@@ -47,15 +48,18 @@ function App() {
   return (
     <div className="App">
       <br />
+
       <h1>Formula 1 standings through the years.</h1>
+
       {/* bring in drop down menu component */}
       <Dropdown selected={selected} setSelected={setSelected} />
       <br />
       <br />
+
       {/* bring in our StandingList component */}
       {/* pass our state as a prop */}
       {/* standings, the property key (will be constructed in our props object when we pass it to the other component) = standings, the piece of state (what we want the value of that key to be)*/}
-      {/* <StandingList standings={standings} /> */}
+      <StandingList standings={standings} />
     </div>
   )
 }
