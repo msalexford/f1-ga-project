@@ -27,7 +27,8 @@ function App() {
     const getData = async () => {
       // make axios call
       const response = await axios.get(
-        `${BASE_URL}/${selected}/driverStandings.json`
+        // `${BASE_URL}/${selected}/driverStandings.json`
+        `${BASE_URL}/2022/driverStandings.json`
       )
       // create setStandings to store standings in state
       setStandings(
