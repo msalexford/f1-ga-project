@@ -1,3 +1,7 @@
+import Constructor from './Constructor'
+import Points from './Points'
+
+
 // create a component to display our standings
 
 // create a function
@@ -20,10 +24,15 @@ const StandingList = (props) => {
                 // here we will put all the JSX for each standing we want to display on the screen
                 // give the div a key (anytime you use map, you must give outermost element a key)
                 <div key={standing.position}>
-                    <h3>{standing.Driver.familyName}</h3>
-                    <p>{standing.Constructors[0].name}</p>
-                    <p>{standing.points}</p>
-                    <br />
+                    <div className="card">
+                    <div className="card_title">
+                        <h3>{standing.Driver.familyName}</h3>
+                    </div>
+                    <div className="card_body">
+                        <Constructor constructor={standing.Constructors[0]}/>
+                        <Points points={standing.points} />
+                    </div>
+                    </div>
                 </div>
             ))
             }
