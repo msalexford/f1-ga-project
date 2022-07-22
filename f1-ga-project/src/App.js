@@ -10,10 +10,6 @@ import Dropdown from './components/Dropdown'
 import axios from 'axios'
 // import global variables
 import { BASE_URL } from './globals'
-// import d3
-import * as d3 from 'd3'
-import { hierarchy, svg } from 'd3'
-import { select } from 'd3'
 
 function App() {
   // for drop down menu
@@ -61,6 +57,7 @@ function App() {
         {/* pass our state as a prop */}
         {/* standings, the property key (will be constructed in our props object when we pass it to the other component) = standings, the piece of state (what we want the value of that key to be)*/}
         <StandingList standings={standings} />
+        {/* <p className="footer">Data provided by the Ergast Developer API.</p> */}
       </div>
       <br />
     </div>
