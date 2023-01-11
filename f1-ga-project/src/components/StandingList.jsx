@@ -29,6 +29,9 @@ const StandingList = (props) => {
                         <div className="card_title">
                             <h3>{standing.Driver.familyName}</h3>
                         </div>
+                        <div className='nationality'>
+                            <p>{standing.Driver.nationality}</p>
+                        </div>
                         <div className="card_body">
                             <Constructor constructor={standing.Constructors[0]}/>
                             <Points points={standing.points} />

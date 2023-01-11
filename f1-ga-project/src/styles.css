@@ -25,8 +25,16 @@
   padding: 4rem;
 }
 
-.container {
-  /* width: 100%; */
+.nationality {
+  font-size: 14px;
+  font-weight: 150;
+  font-style: italic;
+  letter-spacing: 1px;
+  line-height: 3;
+  text-transform: uppercase;
+}
+
+.container {  
   height: 100vh;
   padding: 20px;
   line-height: 1.5em;
@@ -69,6 +77,7 @@
     width: 9rem;
     height: 9rem;
     float: right;
+    margin-top: -3rem;
   }
 
   p.footer {
@@ -108,7 +117,7 @@
   } */
 
   .dropdown {
-    width: 400px;
+    width: 50%;
     user-select: none;
     margin: 50px auto;
     position: relative;
