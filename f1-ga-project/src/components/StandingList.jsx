@@ -24,7 +24,7 @@ const StandingList = (props) => {
                 // give the div a key (anytime you use map, you must give outermost element a key)
                
                <div key={standing.position}>
-                    <a href = 'www.google.com'>
+                    <a href = {standing.Driver.url} target="_blank" rel="noreferrer">
                     <div className="card">
                         <div className="card_title">
                             <h3>{standing.Driver.familyName}</h3>
