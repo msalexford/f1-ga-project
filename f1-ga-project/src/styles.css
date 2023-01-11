@@ -4,24 +4,40 @@
     font-family: 'Helvetica Neue', sans-serif;
   }
 
-  h1 { color: #111; font-size: 40px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
-  
+  h1 {
+    color: #111;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+  }
+
   body {
     background: #fcfcfc;
   }
 
 .App {
   padding: 4rem;
-  align-items: center;
+}
+
+.container {
+  /* width: 100%; */
+  height: 100vh;
+  padding: 20px;
+  line-height: 1.5em;
+  display: flex;
+  justify-content: center;
 }
 
   .card {
-    margin: 2rem 2rem 2rem 0;
+    margin: 2rem 2rem 2rem 2rem;
     padding: 1.5rem;
-    width: 250px;
+    width: 31.5rem;
+    height: 12rem;
     box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
     transition: transform .3s ease;
-    cursor: pointer;
+    /* cursor: pointer; */
   }
 
   .card:hover {
@@ -35,16 +51,31 @@
 
   .card_body {
     margin: 1rem 0;
+    width: 60%;
+    float: left;
+  }
+
+  .card_img {
+    margin-right: 3rem;
+  }
+  
+  .profilePic {
+    border-radius: 50%;
+    object-fit: cover; 
+    width: 9rem;
+    height: 9rem;
+    float: right;
   }
 
   p.footer {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 150;
     font-style: italic;
-    align-items: center;
     letter-spacing: 1px;
-  }
+    line-height: 6;
 
+    /* text-align: center; */
+  }
 
   button {
     display: block;
@@ -68,23 +99,21 @@
     touch-action: manipulation;
   }
 
-  .dropdown-menu {
+  /* .dropdown-menu {
     align-items: center;
-  }
-  
-  .container {
-    width: 100%;
-    height: 100vh;
-    align-items: center;
-    padding: 60px;
-    line-height: 1.5em;
-  }
+  } */
+
   .dropdown {
     width: 400px;
     user-select: none;
-    margin: 60px auto;
+    margin: 50px auto;
     position: relative;
   }
+
+  .center {
+    margin: 0 auto;
+  }
+
   .dropdown .dropdown-btn {
     padding: 15px 20px;
     background: #fff;

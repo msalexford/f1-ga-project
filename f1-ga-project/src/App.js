@@ -57,8 +57,8 @@ function App() {
         {/* pass our state as a prop */}
         {/* standings, the property key (will be constructed in our props object when we pass it to the other component) = standings, the piece of state (what we want the value of that key to be)*/}
         <StandingList standings={standings} />
-        {/* <p className="footer">Data provided by the Ergast Developer API.</p> */}
       </div>
+      {/* <p className="footer">Data provided by the Ergast Developer API.</p> */}
       <br />
     </div>
   )

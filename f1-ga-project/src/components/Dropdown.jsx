@@ -39,8 +39,8 @@ function Dropdown ({selected,setSelected, getData }) {
     )}
 </div>
 
-<button onClick={() => getData(selected)}>
-    Show results
+<button onClick={() => getData(selected)} className='center'>
+    Click for results
 </button>
 
 </div>
