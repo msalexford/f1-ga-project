@@ -1,5 +1,7 @@
+// Import the Points style sheet.
 import './points.css'
 
+// Create a Points component that will be a string containing the total points each driver won in a given season.
 const Points = ({ points }) => {
     return (
         <div className="points">
@@ -8,4 +10,5 @@ const Points = ({ points }) => {
     )
 }
 
+// Export Points component.
 export default Points

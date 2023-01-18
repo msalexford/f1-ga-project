@@ -1,50 +1,55 @@
-// import styles
+// Import style sheet.
 import './styles.css'
-// import hooks useState and useState from react
+// Import hooks from React.
 import { useState, useRef, useEffect } from 'react'
-// import StandingList component
+// Import StandingList component that we created.
 import StandingList from './components/StandingList'
-// import dropdown component
+// Import Dropdown component that we created.
 import Dropdown from './components/Dropdown'
-// import axios to fetch api
+// Import axios to fetch the Ergast API to populate the app.
 import axios from 'axios'
-// import global variables
+// Import global axios variables.
 import { BASE_URL } from './globals'
 
 function App() {
-  // for drop down menu
+  // For dropdown menu:
   const [selected, setSelected] = useState('Choose a year to view standings.')
 
-  // for pulling in standings data
+  // For pulling in standings data:
   const [standings, setStandings] = useState([])
   const [selectedStandings, setSelectedStandings] = useState(null)
 
-  // set up useEffect to support async operations
-  // useEffect takes in two arguments: (1) an anonymous function, followed by (2) a dependency array
-  // whatever happens inside of this function will happen right when the component loads
+  // Set up useEffect to support async operations.
+  // useEffect takes in two arguments: (1) an anonymous function, followed by (2) a dependency array.
+  // Whatever happens inside of this function will happen right when the component loads.
+  // We can put an async function inside of useEffect.
 
-  // we can put an async function inside of useEffect
+  // Get data from the API and store in a variable.
   const getData = async (year) => {
-    // make axios call
+    // Make axios call to API. Pass year, which the user will select from the dropdown menu. Data will be stored in response.
     const response = await axios.get(
       // `${BASE_URL}/${selected}/driverStandings.json`
       `${BASE_URL}/${year}/driverStandings.json`
     )
-    // create setStandings to store standings in state
+    // Create setStandings to store the results of our axios request in state.
     setStandings(
       response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings
     )
   }
-  // call getData function (we want our function to fire as soon as the component loads)
+
+  // Call getData function (we want our function to fire as soon as the component loads).
 
   return (
+    // Return the app...
     <div className="App">
       <br />
       <br />
 
+      {/* With this header... */}
       <h1>Formula 1 standings through the years.</h1>
+      {/* The dropdown menu... */}
       <div className="dropdown-menu">
-        {/* bring in drop down menu component */}
+        {/* Bring in the dropdown menu component that we created. */}
         <Dropdown
           getData={getData}
           selected={selected}
@@ -52,16 +57,17 @@ function App() {
         />
       </div>
 
+      {/* ...and the driver cards that will populate the page on user selection from the dropdown menu. */}
       <div className="container">
-        {/* bring in our StandingList component */}
-        {/* pass our state as a prop */}
-        {/* standings, the property key (will be constructed in our props object when we pass it to the other component) = standings, the piece of state (what we want the value of that key to be)*/}
+        {/* Bring in StandingList component that we created. */}
+        {/* Pass our state as a prop. */}
+        {/* Standings, the property key (will be constructed in our props object when we pass it to the other component) = standings, the piece of state (what we want the value of that key to be). */}
         <StandingList standings={standings} />
       </div>
-      {/* <p className="footer">Data provided by the Ergast Developer API.</p> */}
       <br />
     </div>
   )
 }
 
+// Export the app.
 export default App
